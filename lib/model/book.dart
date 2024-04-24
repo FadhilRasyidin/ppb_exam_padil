@@ -1,6 +1,6 @@
 final String tableNotes = 'notes';
 
-class NoteFields {
+class BookFields {
   static final List<String> values = [
     /// Add all fields
     id, isImportant, number, title, description, time
@@ -54,22 +54,22 @@ class Note {
       );
 
   static Note fromJson(Map<String, Object?> json) => Note(
-        id: json[NoteFields.id] as int?,
-        isImportant: json[NoteFields.isImportant] == 1,
-        number: json[NoteFields.number] as int,
-        title: json[NoteFields.title] as String,
-        description: json[NoteFields.description] as String,
-        createdTime: DateTime.parse(json[NoteFields.time] as String),
-        cover: json[NoteFields.description] as String
+        id: json[BookFields.id] as int?,
+        isImportant: json[BookFields.isImportant] == 1,
+        number: json[BookFields.number] as int,
+        title: json[BookFields.title] as String,
+        description: json[BookFields.description] as String,
+        createdTime: DateTime.parse(json[BookFields.time] as String),
+        cover: json[BookFields.description] as String
       );
 
   Map<String, Object?> toJson() => {
-        NoteFields.id: id,
-        NoteFields.title: title,
-        NoteFields.isImportant: isImportant ? 1 : 0,
-        NoteFields.number: number,
-        NoteFields.description: description,
-        NoteFields.time: createdTime.toIso8601String(),
-        NoteFields.cover: cover
+        BookFields.id: id,
+        BookFields.title: title,
+        BookFields.isImportant: isImportant ? 1 : 0,
+        BookFields.number: number,
+        BookFields.description: description,
+        BookFields.time: createdTime.toIso8601String(),
+        BookFields.cover: cover
       };
 }

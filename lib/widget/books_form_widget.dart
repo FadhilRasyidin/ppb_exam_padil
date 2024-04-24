@@ -53,7 +53,7 @@ class NoteFormWidget extends StatelessWidget {
               buildDescription(),
               const SizedBox(height: 16),
               buildCover(),
-              const SizedBox(height: 8,)
+              const SizedBox(height: 8)
             ],
           ),
         ),

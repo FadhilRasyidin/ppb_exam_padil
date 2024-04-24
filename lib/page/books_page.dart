@@ -96,27 +96,4 @@ class _NotesPageState extends State<NotesPage> {
           );
         },
       ));
-
-  // Widget buildNotes() => StaggeredGridView.countBuilder(
-  //       padding: const EdgeInsets.all(8),
-  //       itemCount: notes.length,
-  //       staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-  //       crossAxisCount: 4,
-  //       mainAxisSpacing: 4,
-  //       crossAxisSpacing: 4,
-  //       itemBuilder: (context, index) {
-  //         final note = notes[index];
-
-  //         return GestureDetector(
-  //           onTap: () async {
-  //             await Navigator.of(context).push(MaterialPageRoute(
-  //               builder: (context) => NoteDetailPage(noteId: note.id!),
-  //             ));
-
-  //             refreshNotes();
-  //           },
-  //           child: NoteCardWidget(note: note, index: index),
-  //         );
-  //       },
-  //     );
 }

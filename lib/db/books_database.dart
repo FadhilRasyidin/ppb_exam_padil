@@ -31,13 +31,13 @@ class NotesDatabase {
 
     await db.execute('''
 CREATE TABLE $tableNotes ( 
-  ${NoteFields.id} $idType, 
-  ${NoteFields.isImportant} $boolType,
-  ${NoteFields.number} $integerType,
-  ${NoteFields.title} $textType,
-  ${NoteFields.description} $textType,
-  ${NoteFields.time} $textType,
-  ${NoteFields.cover} $textType
+  ${BookFields.id} $idType, 
+  ${BookFields.isImportant} $boolType,
+  ${BookFields.number} $integerType,
+  ${BookFields.title} $textType,
+  ${BookFields.description} $textType,
+  ${BookFields.time} $textType,
+  ${BookFields.cover} $textType
   )
 ''');
   }
@@ -62,8 +62,8 @@ CREATE TABLE $tableNotes (
 
     final maps = await db.query(
       tableNotes,
-      columns: NoteFields.values,
-      where: '${NoteFields.id} = ?',
+      columns: BookFields.values,
+      where: '${BookFields.id} = ?',
       whereArgs: [id],
     );
 
@@ -77,7 +77,7 @@ CREATE TABLE $tableNotes (
   Future<List<Note>> readAllNotes() async {
     final db = await instance.database;
 
-    final orderBy = '${NoteFields.time} ASC';
+    final orderBy = '${BookFields.time} ASC';
     // final result =
     //     await db.rawQuery('SELECT * FROM $tableNotes ORDER BY $orderBy');
 
@@ -92,7 +92,7 @@ CREATE TABLE $tableNotes (
     return db.update(
       tableNotes,
       note.toJson(),
-      where: '${NoteFields.id} = ?',
+      where: '${BookFields.id} = ?',
       whereArgs: [note.id],
     );
   }
@@ -102,7 +102,7 @@ CREATE TABLE $tableNotes (
 
     return await db.delete(
       tableNotes,
-      where: '${NoteFields.id} = ?',
+      where: '${BookFields.id} = ?',
       whereArgs: [id],
     );
   }
