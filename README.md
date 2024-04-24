@@ -6,7 +6,7 @@
 ## todos
 - [x] Classes
 - [ ] images
-- [ ] error handling
+- [x] error handling
 - [x] stateless and stateful
 - [x] CRUD Sqflite
 - [x] use at least 5 different widgets
